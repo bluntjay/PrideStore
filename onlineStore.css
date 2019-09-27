@@ -1,0 +1,139 @@
+/*Aligns all items in cart*/
+#carList{
+  text-align: center;
+}
+/*Styles checkout form*/
+.formCheck{
+  text-align: left;
+  border: 3px solid #e6b3cc;
+  border-radius: 25px;
+  float: right;
+  padding: 15px;
+  background-color: #e0e0d1 ;
+}
+/*Styles checkout button*/
+#butOut{
+  border-radius: 12px
+}
+/*Spands background to the whole page*/
+body {
+  height: 100vh;
+  margin: 0;
+}
+/*Sets position of background*/
+#bg {
+  top: 0;
+  position: fixed;
+  z-index: -1;
+
+  height: 100%;
+  width: 100%;
+/*Allows background to animate between various colours*/
+  background: 
+    radial-gradient(circle at bottom, #fff, transparent 80%),    
+    linear-gradient(to top, dodgerblue 5%, transparent 70%),    
+    radial-gradient(circle at bottom, #fff, transparent 90%),
+    #1e90ff;
+  animation: bg 15s infinite;
+}
+/*Allows background to animate between various colours*/
+@keyframes bg {
+  15%, 100% { background-color: #1e90ff; }
+  25% { background-color: #39d24a; }
+  50% { background-color: #ff36a3; }
+  75% { background-color: #ff36a3; }
+}
+/*Sets all images to a specific height & width */
+img{
+  height: 350px;
+  width: 300px;
+
+}
+/*Allows options to appear when a certain delivery type is chosen*/
+#deliverType ~ div {
+  display: none;
+}
+#deliverType:checked ~ div {
+  display: block;
+}
+/*Styles each item holders postion*/
+.cardholder {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+/*Styles each displayed in a card*/
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  font-family: arial;
+
+}
+/*tyles background of the cards*/
+.item{
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+/*Styles prices within the cards*/
+.price {
+  position: relative;
+  font-size: 22px;
+  color: black;
+  margin-left: 10px;
+}
+/*Adds a "$" before the prices in the cards*/
+.price:before {
+  position: absolute;
+  content: "$";
+  left: -10px;
+}
+/*Styles the total in the cart*/
+#totalPrice{
+  position: relative;
+  font-size: 22px;
+  color: black;
+  margin-left: 10px;
+}
+/*Adds a "$" to the total within the cart*/
+#totalPrice:before{
+position: absolute;
+content: "$";
+left: -10px;
+}
+/*Styles the quick "Add To Cart" button in the dialog*/
+.addToCart{
+  width: 100px;
+  height: 50px;
+  border-radius: 12px;
+}
+/*Styles the "More" button*/
+.aboutItem{
+  width: 100px;
+  height: 50px;
+  border-radius: 12px;
+}
+/*Styles the list with the navigation bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #e0e0d1 ;
+}
+/*Styles content within navigation bar*/
+li a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #e0e0d1;
+}
+/*Changes color of background of item when hovered over in the navigation bar*/
+li a:hover {
+  background-color: #d98cb3;
+}

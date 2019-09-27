@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My Cart</title>
+	<link rel="stylesheet" type="text/css" href="onlineStore.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<div id="bg"></div>
+<h1><u>Items In Your Cart:</u></h1>
+<nav class="navBar">
+    <ul>
+    <li><a href="onlineStore.html">Catalogue</a></li>
+    <li><a href="cart.html">My Cart</a></li>
+    </ul>
+</nav>
+<!-- Creates a div for items to be written in -->
+<div id="cartList">
+</div>
+<!-- Creates a form for user to input their infomation & checkout -->
+<form class="formCheck">
+	<label><u>Enter Name:</u></label>
+        <input type="texts" name="firstname">
+        <br>
+        <label><u>Enter Email:</u></label>
+        <input type="Email" name="theirMail">
+        <br>
+        <label><u>Phone Number:</u></label>
+        <input type="tel" name="theirNum">
+        <br>
+        <label><u>Enter Coupon Code:</u></label>
+        <!-- When entering the coupon the function will alert you & give you a discount -->
+        <input type="text" onkeyup="couponUpdate(this)">
+        <br>
+        <!-- Allows you to choose your delivery type -->
+        <label><u>Please Select Delivery Type:</u></label><br>
+        <input type="radio" name="deliveryType1" id="deliverType1">Collection<br>
+        <input type="radio" name="deliveryType2" id="deliverType">Delivery<br>
+        <div>
+        <input type="radio">To Home<br>
+        <input type="radio">To Work<br>
+        <input type="radio">To Hotel<br>
+    </div>
+        <br>
+        <!--On click this button will give youe final total -->
+        <button id="butOut" onclick="checkOut()">Check Out!</button>
+</form>
+<span id="refNUm"></span>
+<!-- This links this file to my JavaScript file -->
+<script type="text/javascript" src="onlineStore2.js"></script>
+</body>
+</html>
