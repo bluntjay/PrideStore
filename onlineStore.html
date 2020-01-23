@@ -1,148 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Live Pride!</title>
+    <title>My Cart</title>
     <link rel="stylesheet" type="text/css" href="onlineStore.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
-
 <body>
-    <!-- Creates a div for placement of my background -->
     <div id="bg"></div>
-    <!-- Creates a navigation bar to the different pages -->
-    <nav class="navBar">
-        <ul>
-            <li><a href="onlineStore.html">Catalogue</a></li>
-            <li><a href="cart.html">My Cart</a></li>
-        </ul>
-    </nav>
-    <div class="header">
-        <div class="heading">
-            <h1>Items In Stock</h1>
-        </div>
-        <h1><b><u>Welcome To Live Pride!</u></b></h1>
+<h1 id="checkoutHead">Items In Your Cart:</h1>
+<nav class="navBar">
+    <ul>
+    <li><a href="index.html">Catalogue</a></li>
+    <li><a href="onlineStore.html">My Cart</a></li>
+    </ul>
+</nav>
+<!-- Creates a div for items to be written in -->
+<div id="cartList">
+</div>
+<!-- Creates a form for user to input their infomation & checkout -->
+<form class="formCheck">
+    <label class="labelForm">Enter Name:</label>
+        <input type="texts" name="firstname">
+        <br>
+        <label class="labelForm">Enter Email:</label>
+        <input type="Email" name="theirMail">
+        <br>
+        <label class="labelForm">Phone Number:</label>
+        <input type="tel" name="theirNum">
+        <br>
+        <label class="labelForm">Enter Coupon Code:</label>
+        <!-- When entering the coupon the function will alert you & give you a discount -->
+        <input type="text" onkeyup="couponUpdate(this)">
+        <br>
+        <!-- Allows you to choose your delivery type -->
+        <label class="labelForm">Please Select Delivery Type:</label><br>
+        <input type="radio" name="deliveryType1" id="deliverType1">Collection<br>
+        <input type="radio" name="deliveryType2" id="deliverType">Delivery<br>
+        <div>
+        <input type="radio">To Home<br>
+        <input type="radio">To Work<br>
+        <input type="radio">To Hotel<br>
     </div>
-    <!-- Creates my cart with their items & prices -->
-    <div class="cart">
-        <i class="shopBask"></i>
-        <i class="cartDown"></i>
-        <div class="totalText">
-            <h2><u>Items:</u></h2>
-            <p id="itemsBask"></p>
-        </div>
-    </div>
-    <div id="cartItems">
-        <ol id="listItem"></ol>
-        <div class="totalText">
-            <p>Total:</p>
-            <p id="totalPrice"></p>
-            <button><a href="cart.html">Checkout</a></button>
-        </div>
-    </div>
-    <p>We are you one stop shop for all things <b>PRIDE</b>! </p>
-    <!-- Creates divs for items with images, prices & infomation about the item -->
-    <div class="cardholder">
-        <div id="prideT" class="item">
-            <img src="images/prideT.jpg">
-            <i class="cartPlus" id="basket"></i>
-            <div class="overflow">
-                <h2 class="itemName">Pride T-Shirt</h2>
-            </div>
-            <h4>Show your pride with 100% cotton shirt</h4>
-            <div class="prices">
-                <p class="price">15.00</p>
-                <div class="theItem">
-                    <button class="aboutItem">More</button>
-                    <button class="addToCart">Add To Cart</button>
-                </div>
-            </div>
-        </div>
-        <!-- Creates divs for items with images, prices & infomation about the item -->
-        <div id="pantPri" class="item">
-            <img src="images/pantPri.jpg">
-            <i class="cartPlus" id="basket"></i>
-            <div class="overflow">
-                <h2 class="itemName">Pride Pants</h2>
-            </div>
-            <h4>This on durable & water resistant rainbow</h4>
-            <div class="prices">
-                <p class="price">55.00</p>
-                <div class="theItem">
-                    <button class="aboutItem">More</button>
-                    <button class="addToCart">Add To Cart</button>
-                </div>
-            </div>
-        </div>
-        <!-- Creates divs for items with images, prices & infomation about the item -->
-        <div id="phonePri" class="item">
-            <img src="images/phonePri.jpg">
-            <i class="cartPlus" id="basket"></i>
-            <div class="overflow">
-                <h2 class="itemName">Rainbow Phone Case</h2>
-            </div>
-            <h4>Take pride everywhere you go!</h4>
-            <div class="prices">
-                <p class="price">12.00</p>
-                <div class="theItem">
-                    <button class="aboutItem">More</button>
-                    <button class="addToCart">Add To Cart</button>
-                </div>
-            </div>
-        </div>
-        <!-- Creates divs for items with images, prices & infomation about the item -->
-        <div id="prideSneak" class="item">
-            <img src="images/sneaks.jpg">
-            <i class="cartPlus" id="basket"></i>
-            <div class="overflow">
-                <h2 class="itemName">Rainbow Sneakers</h2>
-            </div>
-            <h4>From head to toe, be a rainbow!</h4>
-            <div class="prices">
-                <p class="price">70.00</p>
-                <div class="theItem">
-                    <button class="aboutItem">More</button>
-                    <button class="addToCart">Add To Cart</button>
-                </div>
-            </div>
-        </div>
-        <!-- Creates divs for items with images, prices & infomation about the item -->
-        <div id="prideCap" class="item">
-            <img src="images/prideCap.jpg">
-            <i class="cartPlus" id="basket"></i>
-            <div class="overflow">
-                <h2 class="itemName">Pride Peak-Cap</h2>
-            </div>
-            <h4>This cotton cap will keep you cool</h4>
-            <div class="prices">
-                <p class="price">30.00</p>
-                <div class="theItem">
-                    <button class="aboutItem">More</button>
-                    <button class="addToCart">Add To Cart</button>
-                </div>
-            </div>
-        </div>
-        <!-- Creates divs for items with images, prices & infomation about the item -->
-        <div id="prideDress" class="item">
-            <img src="images/prideDress.jpg">
-            <i class="cartPlus" id="basket"></i>
-            <div class="overflow">
-                <h2 class="itemName">Rainbow Sequence Dress</h2>
-            </div>
-            <h4>There was only 3 of this dress made</h4>
-            <div class="prices">
-                <p class="price">98.00</p>
-                <div class="theItem">
-                    <button class="aboutItem">More</button>
-                    <button class="addToCart">Add To Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <p><u>Note:</u> All of our items are vegan friendly & animal cruelty free</p>
-    </div>
-    <script type="text/javascript" src="onlineStore.js"></script>
+        <br>
+        <!--On click this button will give youe final total -->
+        <button id="butOut" onclick="checkOut()">Check Out!</button>
+</form>
+<span id="refNUm"></span>
+<!-- This links this file to my JavaScript file -->
+<script type="text/javascript" src="onlineStore2.js"></script>
 </body>
-
 </html>

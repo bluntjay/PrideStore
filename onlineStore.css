@@ -2,46 +2,89 @@
 #carList{
   text-align: center;
 }
+#checkoutHead{
+   color: transparent;
+   background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+   -webkit-background-clip: text;
+   text-decoration: underline;
+   font-size: 4.5em;
+   letter-spacing: 15px;
+   text-align: center;
+}
+#itembBask{
+  border-radius: 50%;
+}
 /*Styles checkout form*/
 .formCheck{
+  display: flex;
+  flex-direction: column;
   text-align: left;
   border: 3px solid #e6b3cc;
   border-radius: 25px;
   float: right;
   padding: 15px;
-  background-color: #e0e0d1 ;
+  background: radial-gradient( #fff, #FFE3E3,#FFE2B8,#FFFECE,#C8FFC7,#D3D4FF,#EDD0FF,#FED2FD)
+}
+.labelForm{
+  font-family: Verdana, sans-serif;
+  padding: 10px 15px;
+  margin-top: 5px;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 600;
+
 }
 /*Styles checkout button*/
 #butOut{
   border-radius: 12px
 }
+#webHead{
+  color: transparent;
+   background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+   -webkit-background-clip: text;
+   text-decoration: underline;
+   font-size: 5.5em;
+   letter-spacing: 15px;
+   text-align: center;
+
+
+}
+
 /*Spands background to the whole page*/
 body {
-  height: 100vh;
+  
   margin: 0;
+  background: linear-gradient( #fff, #FFE3E3,#FFE2B8,#FFFECE,#C8FFC7,#D3D4FF,#EDD0FF,#FED2FD)
+}
+.cart{
+  text-align: center;
+  float: right;
+   background: 
+    linear-gradient(to bottom, #fff 2%,),   
+    linear-gradient(to top, #fff 2%, ),
+    linear-gradient(to right, #fff 2%,),    
+    linear-gradient(to right, #fff 2%,);
+ animation: bg 15s infinite;
+ width: 30%;
+ height: auto;
+ border-radius: 15px;
 }
 /*Sets position of background*/
 #bg {
   top: 0;
-  position: fixed;
   z-index: -1;
-
   height: 100%;
   width: 100%;
-/*Allows background to animate between various colours*/
-  background: 
-    radial-gradient(circle at bottom, #fff, transparent 80%),    
-    linear-gradient(to top, dodgerblue 5%, transparent 70%),    
-    radial-gradient(circle at bottom, #fff, transparent 90%),
-    #1e90ff;
-  animation: bg 15s infinite;
 }
 /*Allows background to animate between various colours*/
 @keyframes bg {
-  15%, 100% { background-color: #1e90ff; }
-  25% { background-color: #39d24a; }
-  50% { background-color: #ff36a3; }
-  75% { background-color: #ff36a3; }
+  12.5%, 100% { background-color: #FF948E; }
+  25% { background-color: #FBB169; }
+  37.5% { background-color: #FDFB96; }
+  50% { background-color: #A8FFB4; }
+  62.5% { background-color: #A5D2FE; }
+  75% { background-color: #DBADFF; }
+  87.5% { background-color: #FABFFF; }
 }
 /*Sets all images to a specific height & width */
 img{
@@ -49,6 +92,7 @@ img{
   width: 300px;
 
 }
+
 /*Allows options to appear when a certain delivery type is chosen*/
 #deliverType ~ div {
   display: none;
@@ -61,21 +105,28 @@ img{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+
 }
 /*Styles each displayed in a card*/
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 8px 0 #000;
   max-width: 300px;
   text-align: center;
   font-family: arial;
 
+
 }
 /*tyles background of the cards*/
 .item{
-  background-color: white;
+  background: 
+    radial-gradient(circle at bottom, #fff, transparent 20%),   
+    linear-gradient(to top, #fff 5%, transparent 70%),    
+    radial-gradient(circle at bottom, #fff, transparent 10%);
+ animation: bg 15s infinite;
   border-radius: 12px;
   padding: 15px;
   margin-bottom: 10px;
+  text-align: center;
 }
 /*Styles prices within the cards*/
 .price {
@@ -88,7 +139,7 @@ img{
 .price:before {
   position: absolute;
   content: "$";
-  left: -10px;
+  left: 6pc;
 }
 /*Styles the total in the cart*/
 #totalPrice{
@@ -121,19 +172,25 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #e0e0d1 ;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
 }
 /*Styles content within navigation bar*/
 li a {
-  float: left;
-  display: block;
-  color: black;
+  display: inline-block;
+  color: #fff;
   text-align: center;
+  font-weight: 700;
+  font-family: Times, sans-serif;
+  font-size: 2.3em; 
   padding: 14px 16px;
   text-decoration: none;
-  background-color: #e0e0d1;
+  margin-left: 10%;
 }
 /*Changes color of background of item when hovered over in the navigation bar*/
-li a:hover {
-  background-color: #d98cb3;
+ul a:hover {
+  font-size: 3em;
+}
+button{
+  border-radius: 35%;
+  box-shadow: 2px 3px 2px #F4F4F4;
 }
